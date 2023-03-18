@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #413543;
+        }
+
+        .dice-roller-container {
+            background-color: aliceblue;
+            width: 200px;
+            padding: 15px;
+            display: block;
+            border: 4px double black;
+            border-radius: 10px;
+            margin: 10px auto;
+        }
+
+        .dice-roller-img {
+            height: 100px;
+            display: block;
+            margin: 10px auto;
+            cursor: pointer;
+
+        }
+
+        .dice-text {
+            text-align: center;
+        }
+
+        .btn-roll {
+            display: block;
+            margin: 10px auto;
+            background-color: tomato;
+            border-radius: 10px;
+            padding: 8px 20px;
+            font-size: 20px;
+            color: white;
+            border: 1px solid black;
+            transition: all 1s ease-in-out;
+            cursor: pointer;
+        }
+
+        .btn-roll:hover {
+            box-shadow: 1px 1px 3px 1px gray;
+        }
+        .github-co{
+            display: flex;
+            background-color: azure;
+            justify-content: center;
+        }
+        .github-co a{
+            font-size: 40px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="dice-roller-container">
+        <img src="1.png" alt="" class="dice-roller-img" id="dice" onclick="roll()">
+        <h1 class="dice-text" id="dice-roller-text">0</h1>
+        <button class="btn-roll" onclick="roll()">Roll</button>
+    </div>
+    <div class="github-co">
+        <a href="https://github.com/saurabhjaykar1603">https://github.com/saurabhjaykar1603</a>
+    </div>
+    <script>
+        function roll() {
+        const min = 1;
+        const max = 6;
+        const number = Math.floor(Math.random() * (max - min + 1)) + min;
+        document.getElementById("dice-roller-text").innerHTML = number ;
+        const diceImg = document.getElementById("dice");
+            if (number == 1) {
+                document.getElementById("dice").src = "./1.png";
+            }
+            else if (number == 2) {
+                document.getElementById("dice").src = "./2.png";
+
+            }
+
+            else if (number == 3) {
+                document.getElementById("dice").src = "./3.png";
+
+            }
+            else if (number == 4) {
+                document.getElementById("dice").src = "./4.png";
+
+            }
+            else if (number == 5) {
+                document.getElementById("dice").src = "./5.png";
+
+            }
+            else {
+                document.getElementById("dice").src = "./6.png";
+
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
